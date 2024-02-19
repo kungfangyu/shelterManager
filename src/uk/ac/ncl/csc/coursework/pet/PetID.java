@@ -12,7 +12,7 @@ public final class PetID {
     private final char letter;
     private final String numbers, strRep ;
 
-    private PetID(char letter, String numbers) {
+    public PetID(char letter, String numbers) {
         this.letter = letter;
         this.numbers = numbers;;
         this.strRep = this.letter + this.numbers;

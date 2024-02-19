@@ -9,7 +9,7 @@ public class CustomerNumberTest {
     public static void main(String[] args) {
         System.out.println("Test customer number:");
         Calendar issueDate = Calendar.getInstance();
-        issueDate.set(2024, Calendar.JANUARY, 1);
+        issueDate.set(2024, Calendar.JANUARY + 1, 1);
         Name name = new Name("Fane", "Kung");
         CustomerNumber cn1 = CustomerNumber.getInstance(name.getFirstName(), issueDate);
         CustomerNumber cn2 = CustomerNumber.getInstance("Jane", issueDate);

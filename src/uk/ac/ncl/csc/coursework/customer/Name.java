@@ -11,6 +11,7 @@ public class Name {
     public Name(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+
     }
 
     public static Name getInstance(String firstName, String lastName) {

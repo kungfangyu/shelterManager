@@ -1,6 +1,8 @@
 package uk.ac.ncl.csc.coursework.pet;
 
 public interface Pet {
+    //You can add additional methods (e.g. setter methods) if your solution requires that
+
 
     /**
      * Returns the pet ID.
@@ -37,6 +39,8 @@ public interface Pet {
      */
     boolean isTrained();
 
+    void setAdopted(boolean adopted);
+    void setTrained(boolean trained);
 
 
 
