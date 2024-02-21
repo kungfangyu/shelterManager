@@ -27,18 +27,29 @@ public abstract class PetFactory implements Pet {
         this.isTrained = false;
     }
 
-    public static Pet getInstance(String petType, PetID petID, String careInstructions){
-        Pet pet = pets.get(petID);
+    /**
+     * Creates and returns a new instance of a Pet based on the specified pet type.
+     *
+     * This method generates a new pet either as a Dog or a Cat, based on the input parameter. Each pet
+     * is assigned a unique PetID and specific care instructions. For dogs, they are marked as untrained
+     * initially. If an invalid pet type is specified, an IllegalArgumentException is thrown.
+     *
+     * @param petType The type of pet to create. Valid types are defined in {@link PetFactory} as DOG or CAT.
+     * @return A new instance of a Pet, either a Dog or Cat, with a unique PetID and care instructions.
+     * @throws IllegalArgumentException If the specified pet type is not recognized.
+     */
 
-        if(pet == null) {
-            if(petType.equals(DOG)) {
-               pet = new Dog(petID, careInstructions);
-            } else if(petType.equals(CAT)) {
-                pet = new Cat(petID, careInstructions);
-            } else throw new IllegalArgumentException("Invalid pet type: " + petType);
-
-            pets.put(petID, pet);
-        }
+    public static Pet getInstance(String petType){
+        Pet pet;
+        if(PetFactory.DOG.equals(petType)){
+            String care = "Dogs must feed three meals and walk a day";
+            pet = new Dog(PetID.getInstance(), petType, care);
+            pet.setTrained(false); // initially dog should not be trained.
+        } else if (PetFactory.CAT.equals(petType)) {
+            String care = "Cat must feed two meals a day";
+            pet = new Cat(PetID.getInstance(), petType, care);
+        } else throw new IllegalArgumentException("Invalid pet type: " + petType);
+        pets.put(pet.getPetID(), pet);
         return pet;
     }
 

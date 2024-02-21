@@ -60,14 +60,13 @@ public class Assertions {
      * object.
      *
      * @param expected the expected value of an object for equality testing
-     * @param actual   the actual value of the object to compare with the
-     *                 expected value
-     * @param strRap
+     * @param actual the actual value of the object to compare with the
+     * expected value
      * @throws AssertionError if <code>expected</code> is not equal to
-     *                        <code>actual</code>, i.e. throws AssertionError if
-     *                        <code>expected.equals(actual)</code> is <code>false</code>
+     * <code>actual</code>, i.e. throws AssertionError if
+     * <code>expected.equals(actual)</code> is <code>false</code>
      */
-    public static void assertEquals(Object expected, Object actual, String strRap) {
+    public static void assertEquals(Object expected, Object actual) {
         if (!expected.equals(actual))
             throw new AssertionError(buildMessage(expected, actual));
     }
@@ -152,4 +151,3 @@ public class Assertions {
         return sb.toString();
     }
 }
-

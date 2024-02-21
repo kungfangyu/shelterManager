@@ -39,9 +39,17 @@ public interface Pet {
      */
     boolean isTrained();
 
+    /**
+     * Sets the adoption status of the pet.
+     * @param adopted {@code true} if the pet is adopted, {@code false} otherwise.
+     */
     void setAdopted(boolean adopted);
-    void setTrained(boolean trained);
 
+    /**
+     * Sets the trained status of the dog.
+     * @param trained {@code true} if the dog is trained, {@code false} otherwise.
+     */
+    void setTrained(boolean trained);
 
 
 }
